@@ -1,0 +1,5 @@
+{% extends 'auctions/layout.html' %}
+{%block body%}
+<h4>This listing has been closed.</h4>
+<h4>If you are the owner, please visit your <a href="{% url 'closed' user.username %}">Closed List</a>page for further datails.</h4>
+{% endblock %}

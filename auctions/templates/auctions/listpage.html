@@ -1,0 +1,75 @@
+{% extends 'auctions/layout.html' %}
+{% block body %}
+                    {% if failed %}
+                    <div class="alert alert-danger" role="alert">{{failed}}</div>
+                    {% endif %}
+                    {% if success %}
+                    <div class="alert alert-success" role="alert">{{success}}</div>
+                    {% endif %}
+<div>
+    <div class="list-area">
+        <h2 style="margin: 10px;">{{item.title}}</h2>
+        <h4 style="margin: 10px;">{{item.description}}</h4>
+        <p class="date"><em>{{item.date}}</em></p>
+        <div class="lspimg">
+            <img class=".lspimga" src="https://i.dlpng.com/static/png/5399245-avengers-endgame-2019-avengers-logo-png-by-mintmovi3-on-deviantart-avengers-logo-png-859_930_preview.png" alt="List image">
+        </div>
+        
+        
+        <div class="details">
+            <h5>Price: <span class="price">${{item.price}}</span></h5>
+            <h6>Listed by {% if owner%} you {% else %} {{item.owner.upper}} {% endif %}</h6>
+            
+        </div>
+            {% if user.is_authenticated %}
+            <div class="action">
+                <ul class="nav">
+                    {% if added %}
+                    <li class="nav-item"><a id="rmwat" class="nav-link" href="{% url 'removewatchlist' item.pk %}">Remove from Watchlist</a></li>
+                    {% else %}
+                    <li class="nav-item"><a id="adwat" class="nav-link" href="{% url 'addwatchlist' item.pk %}">Add to Watchlist</a></li>
+                    {% endif %}
+                    {% if owner %}
+                    <li class="nav-item"><a id="clwat" class="nav-link" href="{% url 'closelisting' item.pk %}">Close Auction</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        
+        {% if not owner %}
+        <div class="bid-session">
+            <form action="{% url 'bid' item.id %}" method="POST" class="bid-form">
+                {% csrf_token %}
+            <input class="bid-input" type="text" name="bid" required placeholder="$"><input type="submit" value="$ Bid" class="bid-but">
+            </form>
+            {% endif %}
+        </div>
+        {% endif %}
+
+
+        <div class="comment-session">
+            {% if comments %}
+            <h3>Comments</h3>
+            {% endif %}
+            <div class="comments">
+                {% for comment in comments %}
+                <div class="comment">
+                    <p class="commenter"><strong>{{comment.commenter.upper}}</strong> says: <span class="date">{{comment.time}}</span></p>
+                    <p id="comment">{{comment.comment}}</p>
+                </div>
+                
+                {% endfor %}
+                
+                </div>
+                <div class="comment-form">
+                {% if user.is_authenticated %}
+            <form action="/listings/{{item.id}}" method="POST">
+                {% csrf_token %}
+                <label for="comment"><b>Leave a comment</b></label><br>
+                <textarea style="margin: 0%;" name="comment" required class="form-control"></textarea><br>
+                <input style="font-weight: bold;" type="submit" value="Comment" class="btn btn-primary">
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

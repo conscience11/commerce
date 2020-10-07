@@ -1,0 +1,20 @@
+{% extends 'auctions/layout.html' %}
+{% block body %}
+<div>
+    <h1>Congratulations, {{item.winner}}</h1>
+    <h6>You have won this listing, please go to your <a href="{% url 'won' user.username %}">Winning Page</a> or alternatively <a href="{% url 'wonpage' user.username item.listid %}">Click here</a> to get full details about this listing.</h6>
+    <h3>Basic Details</h3>
+    <ul>
+        <li>Title: {{item.title}}</li>
+        <li>Winning Price: {{item.winprice}}</li>
+        <li>Winner: You</li>
+        <li>Owner: {{item.owner}}</li>
+    </ul>
+    <p>Note: <strong><em>This listing is no longer active.</em></strong></p>
+    <p><a href="{% url 'index' %}">Go Home</a></p>
+</div>
+{% endblock %}
+{% extends 'auctions/layout.html' %}
+{% block body %}
+                    
+{% endblock %}

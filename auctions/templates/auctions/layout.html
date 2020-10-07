@@ -1,0 +1,335 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style>
+            body {
+    
+    max-width: 100%;
+    margin: 0px;
+    
+    
+    
+}
+.blah{color: red;}
+.cong{color: green}
+.cong, .blah{
+    margin-left: 27px;
+}
+.whint{
+    font-size: 12px;
+    margin-left: 27px;
+    color: rgb(2, 2, 105);
+}
+.comment-session{
+    
+    margin-left: 10px;
+    max-width: 50%;
+}
+.comment{
+  border: solid 1px rgb(214, 214, 214);
+  background-color: rgb(250, 250, 250);
+  padding-bottom: 10px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+.commenter{margin: 7px;}
+#comment{margin-left: 10px; font-size: 14px; font-family:Verdana, Geneva, Tahoma, sans-serif}
+.bid-session{
+    
+    margin-left: 9px;
+    height: 50px;
+}
+.bid-input{
+   
+    margin: 0%;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 35px;
+    font-weight: bold;
+    color: rgb(0, 168, 0);
+    min-width: 20%;
+    outline: none;
+    border: 1px solid rgb(1, 187, 1);
+    transition-duration: 500ms;
+    
+}
+.bid-input:focus{
+    border: 1px solid rgb(15, 177, 0);
+    background-color: honeydew;
+}
+.bid-but{
+    outline: none;
+    margin: 0%;
+    height: 35px;
+    font-weight: bold;
+    border: solid 1px rgb(1, 187, 1);
+    color: white;
+    background-color: rgb(0, 206, 0);
+    width: 55px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.bid-but:hover{
+    background-color: rgb(1, 182, 1);
+}
+.head1{
+    
+    padding: 0%;
+}
+h1{margin: 0%;}
+  ul{
+      text-decoration: none;
+  }     
+      
+.listblock{
+    border:solid 1px rgb(201, 201, 201);
+    margin: 0%;
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    min-width: 40%;
+    min-height: 30%;
+    display: inline-block;
+    box-shadow: 1px 2px 5px grey;
+    
+}
+.action{
+    
+    min-width: 30%;
+    margin: 2%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+#rmwat, #adwat, #clwat{
+    
+    margin-right: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+#clwat{
+    background-color: rgb(248, 64, 64);
+    border: solid 1px rgb(201, 12, 12);
+    color: white;
+
+    
+}
+#adwat{background-color: rgb(1, 134, 223);border: solid 1px rgb(0, 93, 155) ; color: white;}
+#adwat:hover{
+    background-color: rgb(1, 113, 187)  
+}
+
+#clwat:hover{
+    background-color: rgb(255, 0, 0);
+    
+}
+#rmwat{background-color: rgb(255, 124, 36); color: white; border:solid 1px rgb(190, 76, 0) ;}
+#rmwat:hover{
+    background-color: rgb(255, 102, 0)
+}
+.listblock:hover{box-shadow: 1px 2px 9px rgb(121, 120, 120)}
+.listtitle, .date,.desc{
+    
+    margin: 0%;
+    margin-left:10px;
+    display: inline;
+}
+
+.date{font-size: 12px;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: italic;color: gray; float: right;margin-right: 6px;}
+.list_dis_a{
+    
+    margin: 10px;
+    width: 250px;
+    height: 150px;
+    
+}
+.price{color: green}
+.list_dis{
+    width: 150px;
+    height: 150px;
+}
+.details,.desc,.l-details{
+    margin: 10px;
+}
+.list-area{
+   
+    max-width: 90%;
+    min-height: 500px;
+    margin:29px;
+}
+.lspimga{
+    margin: 0%;
+    margin-left: 15px;
+}
+.lspimg{
+    margin: 80px;
+    border:1px black solid;
+    max-width:100% ;
+    min-height: 400px;
+    
+}
+.title, .welcome {margin-left: 15px;}
+.atvl{margin-left: 25px; color: rgb(255, 58, 58);}
+.c-form-a{
+    
+    max-width: 90%;
+}
+.c-form{
+    margin-left: 25px;
+}
+.c-form >label{
+    margin: 0%;
+}
+.c-title{
+    transition:300ms;
+    width: 70%;
+    height: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    outline: none;
+    border:solid 1px rgb(182, 181, 181);
+    border-top-right-radius: 5px;
+    border-top-color: red;
+    border-bottom: none;
+    border-right: none;
+}
+.c-title:focus{
+    
+    border-left: solid 3px red;
+    background-color: rgb(252, 252, 252);
+    
+}
+.c-desc{
+   
+    outline: none;
+    border:solid 1px rgb(182, 181, 181);
+    border-top-right-radius: 5px;
+    border-top-color: red;
+    transition:300ms;
+    width: 70%; 
+    border-bottom: none;
+    border-right: none;
+}
+.c-desc:focus{
+    border-left: solid 3px red;
+    background-color: rgb(252, 252, 252);
+}
+.c-url{
+    
+    outline: none;
+    border:solid 1px rgb(182, 181, 181);
+    border-top-right-radius: 5px;
+    border-top-color: red;
+    transition:300ms;
+    width: 70%;
+    border-bottom: none;
+    border-right: none;
+}
+.c-url:focus{border-left: solid 3px red;
+    background-color: rgb(252, 252, 252);}
+.c-price{
+    border-bottom: none;
+    color: green;
+    font-weight: bold;
+    border:solid 1px rgb(182, 181, 181);
+    outline: none;
+    width: 50%;
+    border-top-color:green;
+    transition:300ms;
+    border-radius: 5px;
+    
+}
+.c-price:focus{
+    border-left: solid 3px green;
+    background-color: rgb(240, 255, 227);
+}
+.c-cat{
+    outline: none;
+    border:solid 1px rgb(182, 181, 181);
+    border-top-right-radius: 5px;
+    border-top-color: red;
+    transition:300ms;
+    width: 50%;
+    border-bottom: none;
+    border-right: none;
+    font-weight: bold;
+}
+.c-cat:focus{border-left: solid 3px red;
+    background-color: rgb(252, 252, 252);}
+.c-sub{width: 80px;
+border-radius: 3px;
+padding: 5px;
+    font-weight: bold;
+    color: white;
+    background-color: rgb(38, 38, 255);
+    outline: none;
+    border: solid 1px rgb(0, 0, 167);
+}
+.c-sub:hover{
+    background-color: rgb(0, 0, 216);
+}
+
+
+
+
+
+        </style>
+        <title>{% block title %}Auctions{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="{% static 'auctions/styles.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        
+        <h1 class="title">Auctions</h1>
+        <div class="welcome">
+            {% if user.is_authenticated %}
+                Howdy, <strong>{{user.username.upper}} 
+                     {% else %}
+                Not signed in.
+                     {% endif %}</strong>
+            
+                </div>
+        
+                <div class="head1">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'categories' %}">Categories</a>
+            </li>
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'closed' user.username %}">Closed Listing <span class="badge badge-success" style="background-color: slategrey;">{{ctotal}}</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'won' user.username %}">Won <span class="badge badge-success">{{wtotal}}</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'watchlist' user.username %}">Watchlist <span style="background-color: red; color: white;" class="badge badge-success">{{wattotal}}</span></a>
+            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="{% url 'create' %}">Create</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+            {% endif %}
+        
+        </ul>
+    </div>
+        <hr>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

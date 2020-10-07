@@ -1,0 +1,15 @@
+{% extends 'auctions/layout.html' %}
+{% block body %}
+<div>
+    <h1>{{category}}</h1>
+    {% for item in items %}
+    <div class="listblock"> 
+        <a href="{% url 'listpage' item.id %}"><h5 class="listtitle">{{item.title}}</h5></a>
+    <span class="date">{{item.date}}</span>
+    <div><div class="list_dis_a"></div><span style="margin: 10px;">Price: ${{item.price}}</span></div>
+    <div class="l-details"><span>Category: {% if item.category %} {{item.category}} {% else %} No category {% endif %}</span>
+    </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

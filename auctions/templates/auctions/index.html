@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+
+{% block body %}
+    <h2 class="atvl">Active Listings</h2>
+    {% for item in items %}
+    
+    
+    <div>
+        <div class="listblock"> 
+            <a href="listings/{{item.pk}}"><h5 class="listtitle">{{item.title}}</h5></a>
+        <span class="date">{{item.date}}</span><br><span class="desc"><b>{{item.description}}</b></span>
+        <div><div class="list_dis_a"><img class="list_dis" src="https://i.dlpng.com/static/png/5399245-avengers-endgame-2019-avengers-logo-png-by-mintmovi3-on-deviantart-avengers-logo-png-859_930_preview.png" alt="..."></div>
+        </div>
+        <hr>
+        <div class="details">
+            <ul>
+                <li>Price: <b class="price">${{item.price}}</b></li>
+                <li>Listed by {% if item.owner == user.username %} you {% else %} <b>{{item.owner.capitalize}}</b> {% endif %}</li>
+                <li>Under the category of <b>{{item.category}}</b></li>
+            </ul>
+
+        </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

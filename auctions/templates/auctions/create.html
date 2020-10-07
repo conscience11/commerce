@@ -1,0 +1,39 @@
+{% extends 'auctions/layout.html' %}
+{% block title %}
+Create
+{% endblock %}
+{% block body %}
+<h1 style="margin-left: 15px; color: slateblue;">Create a listing</h1>
+<div>
+    <div class="c-form-a">
+<form action="{% url 'create' %}" method="POST" class="c-form">
+    {% csrf_token %}
+    <label for="title" style="font-size: 40px; font-weight: bold;">Title:</label><br>
+    <input type="text" name="title" required class="c-title"><br><br>
+    
+    <label for="description" style="font-size: 20px; font-weight: bold;">Description:</label><br>
+    <textarea name="description" required class="c-desc"></textarea><br>
+    <label for="url" style="font-weight: bold;">Image Source (URL)</label><br>
+    <input type="url" name="url" class="c-url"><br><br>
+
+    <label for="price" style="font-weight: bold; color: green;">Initial Bid:</label><br>
+    <input type="number" name="price" placeholder="USD" required class="c-price"><br><br>
+
+    <label for="category" style="font-weight: bold; color: slategray;">Category:</label><br>
+    <select name="category" class="c-cat">
+        <option value="Default">Default</option>
+        <option value="Tech">Tech</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Music">Music</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Home">Home</option>
+        <option value="Family">Family</option>
+        <option value="Coding">Coding</option>
+        <option value="Fun">fun</option>
+        
+    </select><br><br>
+    <input type="submit" value="Create" class="c-sub">
+</form>
+    </div>
+</div>
+{% endblock %}

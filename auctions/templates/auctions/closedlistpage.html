@@ -1,0 +1,37 @@
+{% extends 'auctions/layout.html' %}
+{% block body %}
+{% if items %}
+<h2 style="color: slategrey; margin-left: 25px;">Your inactive listing(s)</h2>
+{% endif %}
+{% for item in items %}
+    <div>
+        <div>
+            <div class="listblock"> 
+                <h5 class="listtitle">{{item.title}}</h5>
+            <span class="date">{{item.date}}</span><br><span class="desc"><b>{{item.description}}</b></span>
+            <div><div class="list_dis_a"><img class="list_dis" src="https://i.dlpng.com/static/png/5399245-avengers-endgame-2019-avengers-logo-png-by-mintmovi3-on-deviantart-avengers-logo-png-859_930_preview.png" alt="..."></div>
+            </div>
+            <hr>
+            <div class="l-details">
+                <ul>
+                    <li>Winner: {{item.winner.capitalize}}</li>
+                    <li>Created {{item.datecreated}} and ended {{item.dateclosed}} by you</li>
+                    <li>Category: {{item.category}}</li>
+                </ul>
+                
+            </div>
+            <ul class="nav">
+                <li class="nav-item" ><a id="clwat" class="nav-link" href="{% url 'clear' item.owner item.listid %}">Clear</a></li>
+            </ul>
+            
+            </div>
+        </div>
+    {% empty %}
+    <h6>Your closed listings will appear here.</h6>
+    
+    {% endfor %}
+</div>
+
+
+
+{% endblock %}
