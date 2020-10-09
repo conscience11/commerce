@@ -7,11 +7,13 @@
             body {
     
     max-width: 100%;
-    margin: 0px;
+    margin: 10px;
+    background-color: rgb(247, 214, 214);
     
     
-    
+  
 }
+.comment-form  {margin-bottom: 60px;}
 .blah{color: red;}
 .cong{color: green}
 .cong, .blah{
@@ -272,7 +274,9 @@ padding: 5px;
 .c-sub:hover{
     background-color: rgb(0, 0, 216);
 }
-
+.container{
+margin-bottom: 40px; border-bottom: solid 1px rgb(255, 227, 227);
+}
 
 
 
@@ -284,7 +288,7 @@ padding: 5px;
     </head>
     <body>
         
-        <h1 class="title">Auctions</h1>
+        <h2 class="title">Auctions</h2>
         <div class="welcome">
             {% if user.is_authenticated %}
                 Howdy, <strong>{{user.username.upper}} 
@@ -297,7 +301,7 @@ padding: 5px;
                 <div class="head1">
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'index' %}">Active Listings</a>
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
 
             </li>
             <li class="nav-item">
@@ -305,7 +309,7 @@ padding: 5px;
             </li>
             {% if user.is_authenticated %}
             <li class="nav-item">
-                <a class="nav-link" href="{% url 'closed' user.username %}">Closed Listing <span class="badge badge-success" style="background-color: slategrey;">{{ctotal}}</span></a>
+                <a class="nav-link" href="{% url 'closed' user.username %}">Inactive <span class="badge badge-success" style="background-color: slategrey;">{{ctotal}}</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{% url 'won' user.username %}">Won <span class="badge badge-success">{{wtotal}}</span></a>
