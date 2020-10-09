@@ -298,7 +298,7 @@ def categories(request):
     listitem=Listing.objects.raw("SELECT * FROM auctions_listing GROUP by category")
     return render(request, "auctions/categorypage.html", {"listitem":listitem, "wtotal":wtcount, "wattotal":wattotal, "ctotal":ctotal})
 def category(request, category):
-    cc=ClosedListing.objects.filter(owner=username)
+    cc=ClosedListing.objects.filter(owner=request.user.username)
     ctotal=len(cc)
     wbid=ClosedListing.objects.filter(winner=request.user.username)
     ii=[]

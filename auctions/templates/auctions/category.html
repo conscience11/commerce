@@ -1,13 +1,21 @@
 {% extends 'auctions/layout.html' %}
 {% block body %}
 <div>
-    <h1>{{category}}</h1>
+    <h1 style="margin-left: 25px;">Category: <span style="color: red;">{{category}}</span></h1>
     {% for item in items %}
     <div class="listblock"> 
         <a href="{% url 'listpage' item.id %}"><h5 class="listtitle">{{item.title}}</h5></a>
-    <span class="date">{{item.date}}</span>
-    <div><div class="list_dis_a"></div><span style="margin: 10px;">Price: ${{item.price}}</span></div>
-    <div class="l-details"><span>Category: {% if item.category %} {{item.category}} {% else %} No category {% endif %}</span>
+    <span class="date">{{item.date}}</span><br><span class="desc"><b>{{item.description}}</b></span>
+    <div><div class="list_dis_a"><img class="list_dis" src="https://i.dlpng.com/static/png/5399245-avengers-endgame-2019-avengers-logo-png-by-mintmovi3-on-deviantart-avengers-logo-png-859_930_preview.png" alt="..."></div>
+    </div>
+    <hr>
+    <div class="details">
+        <ul>
+            <li>Price: <b>${{item.price}}</b></li>
+            
+            <li>Under the category of <b>{{item.category}}</b></li>
+        </ul>
+
     </div>
     </div>
     {% endfor %}
